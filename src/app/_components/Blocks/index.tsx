@@ -1,5 +1,3 @@
-import React, { Fragment } from 'react'
-
 import { Page } from '../../../payload/payload-types.js'
 import { ArchiveBlock } from '../../_blocks/ArchiveBlock'
 import { CallToActionBlock } from '../../_blocks/CallToAction'
@@ -21,14 +19,15 @@ const blockComponents = {
 export const Blocks: React.FC<{
   blocks: (Page['layout'][0] | RelatedProductsProps)[]
   disableTopPadding?: boolean
+  disableBottomPadding?: boolean
 }> = props => {
-  const { disableTopPadding, blocks } = props
+  const { disableTopPadding, disableBottomPadding, blocks } = props
 
   const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0
 
   if (hasBlocks) {
     return (
-      <Fragment>
+      <>
         {blocks.map((block, index) => {
           const { blockName, blockType } = block
 
@@ -60,6 +59,10 @@ export const Blocks: React.FC<{
               paddingTop = 'none'
             }
 
+            if (disableBottomPadding && index === 0) {
+              paddingBottom = 'none'
+            }
+
             if (Block) {
               return (
                 <BackgroundColor key={index} invert={blockIsInverted}>
@@ -76,7 +79,7 @@ export const Blocks: React.FC<{
           }
           return null
         })}
-      </Fragment>
+      </>
     )
   }
 
