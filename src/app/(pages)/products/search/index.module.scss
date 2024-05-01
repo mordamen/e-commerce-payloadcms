@@ -1,0 +1,49 @@
+@import '../../../_css/common';
+
+.searchWrapper {
+    position: relative;
+    display: flex;
+    flex: 1 1 0%;
+    flex-shrink: 0;
+}
+
+.label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.input {
+    // display: block;
+    width: 100%;
+    border-radius: 0.375rem; /* 6px */
+    border-color: rgb(229 231 235);
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 2.5rem; /* 40px */
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+    outline-width: 2px;
+
+}
+
+.input::placeholder {
+    color: rgb(107 114 128);
+    font-style: italic;
+}
+
+.magnifyingGlass {
+    position: absolute;
+    left: 0.75rem; /* 12px */
+    top: 50%;
+    height: 18px;
+    width: 18px;
+    transform: translateY(-50%);
+    color: rgb(107 114 128);
+}

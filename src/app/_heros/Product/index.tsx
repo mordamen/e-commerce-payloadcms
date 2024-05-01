@@ -36,12 +36,12 @@ export const ProductHero: React.FC<{
               return (
                 <p key={index} className={classes.category}>
                   {titleToUse} {!isLast && <Fragment>, &nbsp;</Fragment>}
-                  <span className={classes.separator}>|</span>
+                  {/* <span className={classes.separator}>|</span> */}
                 </p>
               )
             })}
           </div>
-          <p className={classes.stock}> In stock</p>
+          {/* <p className={classes.stock}> In stock</p> */}
         </div>
 
         <Price product={product} button={false} />
